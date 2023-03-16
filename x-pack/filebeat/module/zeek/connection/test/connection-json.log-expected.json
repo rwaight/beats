@@ -9,7 +9,7 @@
         "event.category": [
             "network"
         ],
-        "event.dataset": "zeek.connection",
+        "event.dataset": "zeek.conn",
         "event.duration": 76967000,
         "event.id": "CAcJw21BbVedgFnYH3",
         "event.kind": "event",
@@ -19,7 +19,7 @@
             "end",
             "start"
         ],
-        "fileset.name": "connection",
+        "fileset.name": "conn",
         "input.type": "log",
         "log.offset": 0,
         "network.bytes": 309,
@@ -41,14 +41,14 @@
         "tags": [
             "local_orig",
             "local_resp",
-            "zeek.connection"
+            "zeek.conn"
         ],
-        "zeek.connection.history": "Dd",
-        "zeek.connection.local_orig": true,
-        "zeek.connection.local_resp": true,
-        "zeek.connection.missed_bytes": 0,
-        "zeek.connection.state": "SF",
-        "zeek.connection.state_message": "Normal establishment and termination.",
+        "zeek.conn.history": "Dd",
+        "zeek.conn.local_orig": true,
+        "zeek.conn.local_resp": true,
+        "zeek.conn.missed_bytes": 0,
+        "zeek.conn.state": "SF",
+        "zeek.conn.state_message": "Normal establishment and termination.",
         "zeek.session_id": "CAcJw21BbVedgFnYH3"
     },
     {
@@ -69,7 +69,7 @@
         "event.category": [
             "network"
         ],
-        "event.dataset": "zeek.connection",
+        "event.dataset": "zeek.conn",
         "event.duration": 76967000,
         "event.id": "CAcJw21BbVedgFnYH4",
         "event.kind": "event",
@@ -79,7 +79,7 @@
             "end",
             "start"
         ],
-        "fileset.name": "connection",
+        "fileset.name": "conn",
         "input.type": "log",
         "log.offset": 398,
         "network.bytes": 309,
@@ -100,14 +100,14 @@
         "source.port": 38340,
         "tags": [
             "local_orig",
-            "zeek.connection"
+            "zeek.conn"
         ],
-        "zeek.connection.history": "Dd",
-        "zeek.connection.local_orig": true,
-        "zeek.connection.local_resp": false,
-        "zeek.connection.missed_bytes": 0,
-        "zeek.connection.state": "SF",
-        "zeek.connection.state_message": "Normal establishment and termination.",
+        "zeek.conn.history": "Dd",
+        "zeek.conn.local_orig": true,
+        "zeek.conn.local_resp": false,
+        "zeek.conn.missed_bytes": 0,
+        "zeek.conn.state": "SF",
+        "zeek.conn.state_message": "Normal establishment and termination.",
         "zeek.session_id": "CAcJw21BbVedgFnYH4"
     },
     {
@@ -128,7 +128,7 @@
         "event.category": [
             "network"
         ],
-        "event.dataset": "zeek.connection",
+        "event.dataset": "zeek.conn",
         "event.duration": 76967000,
         "event.id": "CAcJw21BbVedgFnYH5",
         "event.kind": "event",
@@ -138,7 +138,7 @@
             "end",
             "start"
         ],
-        "fileset.name": "connection",
+        "fileset.name": "conn",
         "input.type": "log",
         "log.offset": 797,
         "network.bytes": 309,
@@ -164,14 +164,14 @@
         "source.packets": 1,
         "source.port": 38341,
         "tags": [
-            "zeek.connection"
+            "zeek.conn"
         ],
-        "zeek.connection.history": "Dd",
-        "zeek.connection.local_orig": false,
-        "zeek.connection.local_resp": false,
-        "zeek.connection.missed_bytes": 0,
-        "zeek.connection.state": "SF",
-        "zeek.connection.state_message": "Normal establishment and termination.",
+        "zeek.conn.history": "Dd",
+        "zeek.conn.local_orig": false,
+        "zeek.conn.local_resp": false,
+        "zeek.conn.missed_bytes": 0,
+        "zeek.conn.state": "SF",
+        "zeek.conn.state_message": "Normal establishment and termination.",
         "zeek.session_id": "CAcJw21BbVedgFnYH5"
     },
     {
@@ -183,7 +183,7 @@
         "event.category": [
             "network"
         ],
-        "event.dataset": "zeek.connection",
+        "event.dataset": "zeek.conn",
         "event.id": "Cc6NJ3GRlfjE44I3h",
         "event.kind": "event",
         "event.module": "zeek",
@@ -191,7 +191,7 @@
             "connection",
             "info"
         ],
-        "fileset.name": "connection",
+        "fileset.name": "conn",
         "input.type": "log",
         "log.offset": 1195,
         "network.bytes": 107,
@@ -209,15 +209,15 @@
         "source.ip": "192.0.2.205",
         "source.packets": 1,
         "tags": [
-            "zeek.connection"
+            "zeek.conn"
         ],
-        "zeek.connection.icmp.code": 3,
-        "zeek.connection.icmp.type": 3,
-        "zeek.connection.local_orig": false,
-        "zeek.connection.local_resp": false,
-        "zeek.connection.missed_bytes": 0,
-        "zeek.connection.state": "OTH",
-        "zeek.connection.state_message": "No SYN seen, just midstream traffic (a 'partial connection' that was not later closed).",
+        "zeek.conn.icmp.code": 3,
+        "zeek.conn.icmp.type": 3,
+        "zeek.conn.local_orig": false,
+        "zeek.conn.local_resp": false,
+        "zeek.conn.missed_bytes": 0,
+        "zeek.conn.state": "OTH",
+        "zeek.conn.state_message": "No SYN seen, just midstream traffic (a 'partial connection' that was not later closed).",
         "zeek.session_id": "Cc6NJ3GRlfjE44I3h"
     },
     {
@@ -230,7 +230,7 @@
         "event.category": [
             "network"
         ],
-        "event.dataset": "zeek.connection",
+        "event.dataset": "zeek.conn",
         "event.id": "C2KP1V3alRLoxl4JB9",
         "event.kind": "event",
         "event.module": "zeek",
@@ -238,7 +238,7 @@
             "connection",
             "info"
         ],
-        "fileset.name": "connection",
+        "fileset.name": "conn",
         "input.type": "log",
         "log.offset": 1503,
         "network.bytes": 0,
@@ -258,14 +258,14 @@
         "source.port": 46408,
         "tags": [
             "local_orig",
-            "zeek.connection"
+            "zeek.conn"
         ],
-        "zeek.connection.history": "C",
-        "zeek.connection.local_orig": true,
-        "zeek.connection.local_resp": false,
-        "zeek.connection.missed_bytes": 0,
-        "zeek.connection.state": "OTH",
-        "zeek.connection.state_message": "No SYN seen, just midstream traffic (a 'partial connection' that was not later closed).",
+        "zeek.conn.history": "C",
+        "zeek.conn.local_orig": true,
+        "zeek.conn.local_resp": false,
+        "zeek.conn.missed_bytes": 0,
+        "zeek.conn.state": "OTH",
+        "zeek.conn.state_message": "No SYN seen, just midstream traffic (a 'partial connection' that was not later closed).",
         "zeek.session_id": "C2KP1V3alRLoxl4JB9"
     }
 ]

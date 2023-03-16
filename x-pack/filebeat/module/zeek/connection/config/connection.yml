@@ -16,51 +16,51 @@ processors:
   - rename:
       fields:
         - from: "json"
-          to: "zeek.connection"
+          to: "zeek.conn"
 
-        - from: "zeek.connection.duration"
+        - from: "zeek.conn.duration"
           to: "temp.duration"
 
-        - from: "zeek.connection.id.orig_h"
+        - from: "zeek.conn.id.orig_h"
           to: "source.address"
 
-        - from: "zeek.connection.id.orig_p"
+        - from: "zeek.conn.id.orig_p"
           to: "source.port"
 
-        - from: "zeek.connection.id.resp_h"
+        - from: "zeek.conn.id.resp_h"
           to: "destination.address"
 
-        - from: "zeek.connection.id.resp_p"
+        - from: "zeek.conn.id.resp_p"
           to: "destination.port"
 
-        - from: "zeek.connection.proto"
+        - from: "zeek.conn.proto"
           to: "network.transport"
 
-        - from: "zeek.connection.service"
+        - from: "zeek.conn.service"
           to: "network.protocol"
 
-        - from: "zeek.connection.uid"
+        - from: "zeek.conn.uid"
           to: "zeek.session_id"
 
-        - from: "zeek.connection.orig_ip_bytes"
+        - from: "zeek.conn.orig_ip_bytes"
           to: "source.bytes"
 
-        - from: "zeek.connection.resp_ip_bytes"
+        - from: "zeek.conn.resp_ip_bytes"
           to: "destination.bytes"
 
-        - from: "zeek.connection.orig_pkts"
+        - from: "zeek.conn.orig_pkts"
           to: "source.packets"
 
-        - from: "zeek.connection.resp_pkts"
+        - from: "zeek.conn.resp_pkts"
           to: "destination.packets"
 
-        - from: "zeek.connection.conn_state"
-          to: "zeek.connection.state"
+        - from: "zeek.conn.conn_state"
+          to: "zeek.conn.state"
 
-        - from: "zeek.connection.orig_l2_addr"
+        - from: "zeek.conn.orig_l2_addr"
           to: "source.mac"
 
-        - from: "zeek.connection.resp_l2_addr"
+        - from: "zeek.conn.resp_l2_addr"
           to: "destination.mac"
 
       ignore_missing: true
@@ -70,10 +70,10 @@ processors:
       when.equals.network.transport: icmp
       fields:
         - from: "source.port"
-          to: "zeek.connection.icmp.type"
+          to: "zeek.conn.icmp.type"
 
         - from: "destination.port"
-          to: "zeek.connection.icmp.code"
+          to: "zeek.conn.icmp.code"
 
       ignore_missing: true
       fail_on_error: false
@@ -95,8 +95,8 @@ processors:
     then:
       community_id:
         fields:
-          icmp_type: zeek.connection.icmp.type
-          icmp_code: zeek.connection.icmp.code
+          icmp_type: zeek.conn.icmp.type
+          icmp_code: zeek.conn.icmp.code
     else:
       community_id:
 {{ if .internal_networks }}

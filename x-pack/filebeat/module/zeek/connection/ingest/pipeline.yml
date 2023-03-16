@@ -7,12 +7,12 @@ processors:
     field: event.created
     value: '{{@timestamp}}'
 - date:
-    field: zeek.connection.ts
+    field: zeek.conn.ts
     formats:
     - UNIX
     - ISO8601
 - remove:
-    field: zeek.connection.ts
+    field: zeek.conn.ts
 - set:
     field: event.id
     value: '{{zeek.session_id}}'
@@ -26,11 +26,11 @@ processors:
     field: temp.duration
     ignore_missing: true
 - script:
-    source: if (ctx.zeek.connection.local_orig) ctx.tags.add("local_orig");
-    if: ctx.zeek.connection.local_orig != null
+    source: if (ctx.zeek.conn.local_orig) ctx.tags.add("local_orig");
+    if: ctx.zeek.conn.local_orig != null
 - script:
-    source: if (ctx.zeek.connection.local_resp) ctx.tags.add("local_resp");
-    if: ctx.zeek.connection.local_resp != null
+    source: if (ctx.zeek.conn.local_resp) ctx.tags.add("local_resp");
+    if: ctx.zeek.conn.local_resp != null
 - append:
     field: related.ip
     value: '{{source.ip}}'
@@ -47,27 +47,27 @@ processors:
     ignore_failure: true
 - script:
     source: |-
-      if (ctx?.zeek?.connection?.local_orig == null ||
-          ctx?.zeek?.connection?.local_resp == null) {
+      if (ctx?.zeek?.conn?.local_orig == null ||
+          ctx?.zeek?.conn?.local_resp == null) {
         return;
       }
-      if (ctx.zeek.connection.local_orig == true &&
-          ctx.zeek.connection.local_resp == true) {
+      if (ctx.zeek.conn.local_orig == true &&
+          ctx.zeek.conn.local_resp == true) {
         ctx.network.direction = "internal";
         return;
       }
-      if (ctx.zeek.connection.local_orig == true &&
-          ctx.zeek.connection.local_resp == false) {
+      if (ctx.zeek.conn.local_orig == true &&
+          ctx.zeek.conn.local_resp == false) {
         ctx.network.direction = "outbound";
         return;
       }
-      if (ctx.zeek.connection.local_orig == false &&
-          ctx.zeek.connection.local_resp == true) {
+      if (ctx.zeek.conn.local_orig == false &&
+          ctx.zeek.conn.local_resp == true) {
         ctx.network.direction = "inbound";
         return;
       }
-      if (ctx.zeek.connection.local_orig == false &&
-          ctx.zeek.connection.local_resp == false) {
+      if (ctx.zeek.conn.local_orig == false &&
+          ctx.zeek.conn.local_resp == false) {
         ctx.network.direction = "external";
         return;
       }
@@ -179,12 +179,12 @@ processors:
           - connection
           - info
     source: >-
-      if (ctx?.zeek?.connection?.state == null) {
+      if (ctx?.zeek?.conn?.state == null) {
         return;
       }
-      if (params.containsKey(ctx.zeek.connection.state)) {
-        ctx.zeek.connection.state_message = params[ctx.zeek.connection.state]["conn_str"];
-        ctx.event.type = params[ctx.zeek.connection.state]["types"];
+      if (params.containsKey(ctx.zeek.conn.state)) {
+        ctx.zeek.conn.state_message = params[ctx.zeek.conn.state]["conn_str"];
+        ctx.event.type = params[ctx.zeek.conn.state]["types"];
       }
 on_failure:
 - set:

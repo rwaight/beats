@@ -1,4 +1,4 @@
-- name: connection
+- name: conn
   type: group
   description: >
     Fields exported by the Zeek Connection log
